@@ -1,0 +1,95 @@
+﻿<Window x:Class="KassaApplicatieBTULIP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KassaApplicatieBTULIP"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF249E99">
+        <Button x:Name="btnKlanten" Content="Klanten" HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top" Width="80" Height="45" Click="btnKlanten_Click"/>
+        <Button x:Name="btnProducten" Content="Producten" HorizontalAlignment="Left" Margin="25,125,0,0" VerticalAlignment="Top" Width="80" Height="45" Click="btnProducten_Click"/>
+        <Button x:Name="btnBestelling" Content="Bestelling" HorizontalAlignment="Left" Margin="25,190,0,0" VerticalAlignment="Top" Width="80" Height="45" Click="btnBestelling_Click"/>
+        <Button x:Name="btnFactuur" Content="Factuur" HorizontalAlignment="Left" Margin="25,255,0,0" VerticalAlignment="Top" Width="80" Height="45" Click="btnFactuur_Click"/>
+        <DataGrid x:Name="dgKlanten" HorizontalAlignment="Left" Height="324" Margin="135,26,0,0" VerticalAlignment="Top" Width="450" Visibility="hidden" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding firstname}" ClipboardContentBinding="{x:Null}" Header="Voornaam"/>
+                <DataGridTextColumn Binding="{Binding lastname}" ClipboardContentBinding="{x:Null}" Header="Achternaam"/>
+                <DataGridTextColumn Binding="{Binding city}" ClipboardContentBinding="{x:Null}" Header="Woonplaats"/>
+                <DataGridTextColumn Binding="{Binding phonenumber}" ClipboardContentBinding="{x:Null}" Header="Telefoonnummer"/>
+                <DataGridTextColumn Binding="{Binding email}" ClipboardContentBinding="{x:Null}" Header="E-mailadres"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="gKlanten" HorizontalAlignment="Left" Height="363" Margin="603,22,0,0" VerticalAlignment="Top" Width="179" Visibility="hidden">
+            <Label x:Name="lbVoornaam" Content="Voornaam" HorizontalAlignment="Left" Margin="10,-5,0,0" VerticalAlignment="Top" Width="83"/>
+            <TextBox x:Name="txtVoornaam" HorizontalAlignment="Left" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <TextBox x:Name="txtAchternaam" HorizontalAlignment="Left" Height="23" Margin="10,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <Label x:Name="lbStad" Content="Stad" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="43"/>
+            <TextBox x:Name="txtStad" HorizontalAlignment="Left" Height="23" Margin="10,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <Label x:Name="lbTel" Content="Telefoonnummer" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Width="129"/>
+            <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="23" Margin="10,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <Label x:Name="lbMail" Content="E-mailadres" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="93"/>
+            <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <Label x:Name="lbAchternaam" Content="Achternaam" HorizontalAlignment="Left" Margin="7,54,0,0" VerticalAlignment="Top" Width="96"/>
+            <Button x:Name="btnKlant" Content="Klant toevoegen" HorizontalAlignment="Left" Margin="14,318,0,0" VerticalAlignment="Top" Width="120" Click="btnKlant_Click"/>
+        </Grid>
+        <DataGrid x:Name="dgProducten" HorizontalAlignment="Left" Height="359" Margin="155,26,0,0" VerticalAlignment="Top" Width="405" Visibility="hidden" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding name}" ClipboardContentBinding="{x:Null}" Header="Productnaam"/>
+                <DataGridTextColumn Binding="{Binding producttype.type}" ClipboardContentBinding="{x:Null}" Header="Producttype"/>                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="gProducten" HorizontalAlignment="Left" Height="387" Margin="577,22,0,0" VerticalAlignment="Top" Width="205" Visibility="hidden">
+            <Button x:Name="btnProduct" Content="Product toevoegen" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="120" Click="btnProduct_Click"/>
+            <TextBox x:Name="txtPrNaam" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+            <Label x:Name="lbPrNaam" Content="Naam product" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="98"/>
+            <Label x:Name="lbPrId" Content="Product Type" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="98"/>
+            <ComboBox x:Name="cbProducttype" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+        <Grid x:Name="gBestelling" HorizontalAlignment="Left" Height="363" Margin="125,22,0,0" VerticalAlignment="Top" Width="657" Visibility="hidden">
+            <DataGrid x:Name="dgOrder" HorizontalAlignment="Left" Height="290" Margin="10,33,0,0" VerticalAlignment="Top" Width="304" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding product.name}" ClipboardContentBinding="{x:Null}" Header="Product"/>
+                    <DataGridTextColumn Binding="{Binding amount}" ClipboardContentBinding="{x:Null}" Header="Hoeveelheid"/>
+                    <DataGridTextColumn Binding="{Binding order.date}" ClipboardContentBinding="{x:Null}" Header="Datum"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label x:Name="lbKlant" Content="Klant:" HorizontalAlignment="Left" Margin="336,58,0,0" VerticalAlignment="Top" Height="35" Width="74" FontSize="18"/>
+            <Label x:Name="lbProduct" Content="Product:" HorizontalAlignment="Left" Margin="336,143,0,0" VerticalAlignment="Top" Height="35" Width="74" FontSize="18"/>
+            <Label x:Name="lbAantal" Content="Aantal:" HorizontalAlignment="Left" Margin="336,218,0,0" VerticalAlignment="Top" Height="35" Width="74" FontSize="18" RenderTransformOrigin="0.473,1.286"/>
+            <ComboBox x:Name="cbKlant" HorizontalAlignment="Left" Margin="456,58,0,0" VerticalAlignment="Top" Width="191" Height="35" BorderBrush="#FF7E3E3E">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFAA5454" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <ComboBox x:Name="cbProduct" HorizontalAlignment="Left" Margin="456,143,0,0" VerticalAlignment="Top" Width="191" Height="35"/>
+            <TextBox x:Name="txtAantal" HorizontalAlignment="Left" Height="21" Margin="456,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+            <Button x:Name="btnToevoegen" Content="Voeg toe" HorizontalAlignment="Left" Margin="456,288,0,0" VerticalAlignment="Top" Width="131" Height="35" Click="btnToevoegen_Click"/>
+        </Grid>
+        <TextBlock x:Name="tbWelkom" HorizontalAlignment="Left" Margin="305,60,0,0" TextWrapping="Wrap" Text="Welkom" VerticalAlignment="Top" Height="155" Width="370" FontSize="72" Visibility="visible" FontFamily="Stencil"/>
+        <Grid x:Name="gFactuur" HorizontalAlignment="Left" Height="346" Margin="190,34,0,0" VerticalAlignment="Top" Width="550" Visibility="hidden" RenderTransformOrigin="0.5,0.5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="63*"/>
+                <ColumnDefinition Width="47*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.091"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <ComboBox x:Name="cbKlantFactuur" HorizontalAlignment="Left" Margin="122,62,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbFactuur" Content="Klant:" HorizontalAlignment="Left" Margin="141,21,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Stencil"/>
+            <Button x:Name="btnBestellingen" Content="Factuur ophalen" HorizontalAlignment="Left" Margin="287,59,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="btnBestellingen_Click" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbFactuur" HorizontalAlignment="Left" Margin="33,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="94" Width="232"/>
+            <TextBlock x:Name="tbFactuur1" HorizontalAlignment="Left" Margin="270,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="94" Width="232" Grid.ColumnSpan="2"/>
+        </Grid>
+        <Image x:Name="imgTulip" HorizontalAlignment="Left" Height="143" Margin="235,170,0,0" VerticalAlignment="Top" Width="460" Source="http://www.nyc.decodedfashion.com/wp-content/uploads/2016/09/TulipRetail-Logo-WB.png" OpacityMask="#FF14416E" Visibility="visible"/>
+
+    </Grid>
+</Window>

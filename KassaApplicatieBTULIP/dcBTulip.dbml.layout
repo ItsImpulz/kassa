@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dcBTulip">
+  <DataContextMoniker Name="/dcBTulipDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4b0daa26-313c-4061-a33e-3da220bb0ba0" absoluteBounds="1.375, 1.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dcBTulipDataContext/customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2bf7733-05e8-4664-bc6a-6a853ed60bcf" absoluteBounds="1.3900000000000001, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="152cb207-1536-4821-9c74-9225fccb057a" absoluteBounds="4.125, 5.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcBTulipDataContext/itemsinorder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dfffc6e-cc50-4523-ad32-c47ecaee7a73" absoluteBounds="4.14, 6.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa28266c-2416-4378-993b-b4a7586ff853" absoluteBounds="1.375, 3.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dcBTulipDataContext/order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aaf20f0c-7591-4ee6-b986-51941f2bff9a" absoluteBounds="1.3900000000000001, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f10dd302-860e-4e48-a386-6f8df453b241" absoluteBounds="4.375, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dcBTulipDataContext/pricehistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92782262-680e-4dad-a75d-35d58d000ab0" absoluteBounds="4.39, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.375 : 3.0881982421875); (2.375 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcBTulipDataContext/customer/customer_order" />
+      <nodes>
+        <classShapeMoniker Id="4b0daa26-313c-4061-a33e-3da220bb0ba0" />
+        <classShapeMoniker Id="aa28266c-2416-4378-993b-b4a7586ff853" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 4.8550439453125); (4.21875 : 4.8550439453125); (4.21875 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcBTulipDataContext/order/order_itemsinorder" />
+      <nodes>
+        <classShapeMoniker Id="aa28266c-2416-4378-993b-b4a7586ff853" />
+        <classShapeMoniker Id="152cb207-1536-4821-9c74-9225fccb057a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b348ae29-e638-4283-aa07-1439dc31a9f5" absoluteBounds="4.375, 3, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dcBTulipDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08fd4775-c152-4a24-8d6b-ba9e5d0d9545" absoluteBounds="4.39, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 4.3862939453125); (5.25 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcBTulipDataContext/product/product_itemsinorder" />
+      <nodes>
+        <classShapeMoniker Id="b348ae29-e638-4283-aa07-1439dc31a9f5" />
+        <classShapeMoniker Id="152cb207-1536-4821-9c74-9225fccb057a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 3); (5.375 : 2.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcBTulipDataContext/product/product_pricehistory" />
+      <nodes>
+        <classShapeMoniker Id="b348ae29-e638-4283-aa07-1439dc31a9f5" />
+        <classShapeMoniker Id="f10dd302-860e-4e48-a386-6f8df453b241" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1b442ddb-a56c-42e1-a4ae-056cab4cb3f5" absoluteBounds="7.75, 3, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dcBTulipDataContext/producttype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c4406da-dfb2-4f46-9bb3-9d0c7b44d384" absoluteBounds="7.7650000000000006, 3.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 3.59699625651042); (6.375 : 3.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcBTulipDataContext/producttype/producttype_product" />
+      <nodes>
+        <classShapeMoniker Id="1b442ddb-a56c-42e1-a4ae-056cab4cb3f5" />
+        <classShapeMoniker Id="b348ae29-e638-4283-aa07-1439dc31a9f5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
